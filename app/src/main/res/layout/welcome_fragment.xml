@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    <data>-->
-    <!--        <variable-->
-    <!--            name="loginViewModel"-->
-    <!--            type="com.udacity.shoestore.screens.login.LoginViewModel"/>-->
-    <!--    </data>-->
+    <data>
+        <variable
+            name="welcomeViewModel"
+            type="com.udacity.shoestore.screens.welcome.WelcomeViewModel"/>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome_layout"
