@@ -27,9 +27,8 @@ class InstructionsFragment : Fragment() {
         binding.instructionsViewModel = viewModel
 
         viewModel.eventOnRead.observe(viewLifecycleOwner, { hasRead ->
-//            if (hasRead)
-                // TODO: go to main screen
-//                findNavController().navigate(Instruction)
+            if (hasRead)
+                findNavController().navigate(InstructionsFragmentDirections.actionInstructionsDestinationToShoeListFragment())
         })
 
         return binding.root
