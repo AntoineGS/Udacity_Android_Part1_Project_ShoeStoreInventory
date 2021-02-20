@@ -12,5 +12,7 @@ class InstructionsViewModel: ViewModel() {
 
     fun onRead() {
         _eventOnRead.value = true
+        //reset to allow backPress to work
+        _eventOnRead.value = false
     }
 }

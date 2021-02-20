@@ -12,5 +12,7 @@ class ShoeListViewModel : ViewModel() {
 
     fun openDetail() {
         _onOpenDetail.value = true
+        //reset to allow backPress to work
+        _onOpenDetail.value = false
     }
 }

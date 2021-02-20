@@ -12,5 +12,7 @@ class LoginViewModel : ViewModel() {
 
     fun onLogin() {
         _eventOnLogin.value = true
+        //reset to allow backPress to work
+        _eventOnLogin.value = false
     }
 }
