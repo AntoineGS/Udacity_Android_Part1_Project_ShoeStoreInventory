@@ -14,21 +14,21 @@ import com.udacity.shoestore.screens.welcome.WelcomeFragmentDirections
 
 class LoginFragment : Fragment() {
 
-    private lateinit var viewModel: LoginViewModel
-    private lateinit var binding: LoginFragmentBinding
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+        val binding: LoginFragmentBinding = DataBindingUtil.inflate(
+            inflater, R.layout.login_fragment, container, false)
+
+        val viewModel: LoginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
         binding.loginViewModel = viewModel
 
         viewModel.eventOnLogin.observe(viewLifecycleOwner, { hasLogin ->
             if (hasLogin)
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
+                findNavController().navigate(
+                    LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
         })
 
         return binding.root
