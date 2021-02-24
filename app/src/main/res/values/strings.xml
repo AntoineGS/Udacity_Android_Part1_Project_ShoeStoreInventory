@@ -3,12 +3,17 @@
     <string name="password_hint">Password...</string>
     <string name="email_hint">Email...</string>
     <string name="login">Login</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="new_account">New Account</string>
     <string name="next">Next</string>
     <string name="detail">Detail</string>
     <string name="welcome">Welcome</string>
-    <string name="instructions">Instructions</string>
     <string name="shoes">Shoes</string>
+    <string name="hi">Hi!</string>
+    <string name="welcome_text">This application will help you manage your inventory!</string>
+    <string name="new_account">New Account</string>
+    <string name="instructions1">Adding shoes to your inventory is easy!\nThey will magically appear
+        in the list for you when opening the application.</string>
+    <string name="instructions2">To see additional detail on the shoe of your choice, simply select
+        it and press on the Detail button.\n\nThat\'s it, you are now a pro with this tool and ready
+        to use it!</string>
+    <string name="instructions">Instructions</string>
 </resources>
