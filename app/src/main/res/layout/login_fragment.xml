@@ -44,7 +44,7 @@
             android:ems="10"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/login_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,27 +54,21 @@
             android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="32dp"
             android:onClick="@{() -> loginViewModel.onLogin()}"
             android:text="@string/new_account"
-            app:layout_constraintBottom_toTopOf="@+id/create_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_editText"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/create_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
             android:onClick="@{() -> loginViewModel.onLogin()}"
             android:text="@string/login"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/login_button" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/login_button"
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

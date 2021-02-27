@@ -13,14 +13,10 @@ import com.udacity.shoestore.models.Shoe
 
 class ShoeItemFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeItemViewModel
     private lateinit var binding: ShoeitemFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.shoelist_fragment, container, false)
-        viewModel = ViewModelProvider(this).get(ShoeItemViewModel::class.java)
-        binding.shoeItemViewModel = viewModel
-
         return binding.root
     }
 

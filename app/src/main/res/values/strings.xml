@@ -16,4 +16,10 @@
         it and press on the Detail button.\n\nThat\'s it, you are now a pro with this tool and ready
         to use it!</string>
     <string name="instructions">Instructions</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="description">Description</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
 </resources>

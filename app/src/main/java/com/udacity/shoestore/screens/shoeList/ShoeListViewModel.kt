@@ -25,9 +25,32 @@ class ShoeListViewModel : ViewModel() {
         _onOpenDetail.value = false
     }
 
+    private fun randomCompanyName(): String {
+        val companies = arrayOf("Clarks", "Nike", "Browns", "Kodiak", "Converse", "New Balance")
+        return companies[(0 until 5).random()]
+    }
+
+    private fun randomSize(): Double {
+        val size = (6 until 16).random()
+        val ran = (0 until 1).random()
+
+        return if (ran == 0) {
+            size + 0.5
+        } else {
+            size.toDouble()
+        }
+    }
+
+    private fun randomShoeName(): String {
+        val companies = arrayOf("Evo", "Norma", "Day-T", "Retra", "Cory")
+        return companies[(0 until 4).random()]
+    }
+
     fun initShoeList() {
         for (i in 1..15) {
-            _shoeList.value?.add(Shoe("Shoe", 11.5, "Clarks", "Brown shoes"))
+            val companyName = randomCompanyName()
+            val size = randomSize()
+            _shoeList.value?.add(Shoe(randomShoeName(), size, companyName, "$companyName $size"))
         }
     }
 }
