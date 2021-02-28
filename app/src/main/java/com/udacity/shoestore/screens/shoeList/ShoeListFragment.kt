@@ -12,28 +12,26 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeitemFragmentBinding
 import com.udacity.shoestore.databinding.ShoelistFragmentBinding
 import com.udacity.shoestore.models.Shoe
-import com.udacity.shoestore.screens.instructions.InstructionsViewModel
 
 class ShoeListFragment : Fragment() {
 
     private lateinit var viewModel: ShoeListViewModel
     private lateinit var binding: ShoelistFragmentBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.shoelist_fragment, container, false)
-        viewModel = ViewModelProvider(this).get(ShoeListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         binding.shoeListViewModel = viewModel
+        binding.lifecycleOwner = this
 
         viewModel.onOpenDetail.observe(viewLifecycleOwner, { isOpen ->
-//            if (isOpen)
-//                findNavController().navigate(ShoeListFragmentDirections)
+            if (isOpen)
+                findNavController().navigate(ShoeListFragmentDirections.actionShoeListDestinationToShoeDetailFragment())
         })
 
         viewModel.shoeList.observe(viewLifecycleOwner, { shoeList ->
             processShoeList(shoeList)
         })
-
-        viewModel.initShoeList()
 
         return binding.root
     }

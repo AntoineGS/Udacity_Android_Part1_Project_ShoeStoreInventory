@@ -17,6 +17,7 @@ class ShoeListViewModel : ViewModel() {
 
     init {
         _shoeList.value = arrayListOf()
+        initShoeList()
     }
 
     fun openDetail() {
@@ -46,11 +47,16 @@ class ShoeListViewModel : ViewModel() {
         return companies[(0 until 4).random()]
     }
 
-    fun initShoeList() {
+    fun addShoe(shoe: Shoe) {
+        _shoeList.value?.add(shoe)
+    }
+
+    private fun initShoeList() {
         for (i in 1..15) {
             val companyName = randomCompanyName()
             val size = randomSize()
-            _shoeList.value?.add(Shoe(randomShoeName(), size, companyName, "$companyName $size"))
+            // thankfully the observer seems to trigger once, after the loop, otherwise a different approach would have been needed
+            addShoe(Shoe(randomShoeName(), size, companyName, "$companyName $size"))
         }
     }
 }
