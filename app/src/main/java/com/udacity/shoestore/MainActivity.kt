@@ -1,6 +1,5 @@
 package com.udacity.shoestore
 
-import android.content.ClipData
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -10,7 +9,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.databinding.ActivityMainBinding
-import com.udacity.shoestore.screens.shoeList.ShoeListFragment
 import com.udacity.shoestore.screens.shoeList.ShoeListFragmentDirections
 import timber.log.Timber
 
