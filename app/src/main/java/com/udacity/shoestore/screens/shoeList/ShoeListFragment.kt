@@ -1,13 +1,14 @@
 package com.udacity.shoestore.screens.shoeList
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeitemFragmentBinding
 import com.udacity.shoestore.databinding.ShoelistFragmentBinding
@@ -22,7 +23,6 @@ class ShoeListFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.shoelist_fragment, container, false)
         viewModel = ViewModelProvider(requireActivity()).get(ShoeListViewModel::class.java)
         binding.shoeListViewModel = viewModel
-        binding.lifecycleOwner = this
 
         viewModel.onOpenDetail.observe(viewLifecycleOwner, { isOpen ->
             if (isOpen)
@@ -49,4 +49,9 @@ class ShoeListFragment : Fragment() {
             }
         }
     }
+//
+//    override fun onActivityCreated(savedInstanceState: Bundle?) {
+//        super.onActivityCreated(savedInstanceState)
+//        (activity as AppCompatActivity).setSupportActionBar()
+//    }
 }

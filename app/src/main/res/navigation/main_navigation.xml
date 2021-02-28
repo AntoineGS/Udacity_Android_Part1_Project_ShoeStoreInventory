@@ -52,6 +52,14 @@
             app:destination="@id/shoeDetail_destination"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_shoeList_destination_to_login_destination"
+            app:destination="@id/login_destination"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/main_navigation"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetail_destination"
@@ -61,6 +69,8 @@
         <action
             android:id="@+id/action_shoeDetail_destination_to_shoeList_destination"
             app:destination="@id/shoeList_destination"
-            app:popUpToInclusive="false" />
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/shoeList_destination" />
     </fragment>
 </navigation>
