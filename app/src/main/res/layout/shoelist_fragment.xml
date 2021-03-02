@@ -10,6 +10,11 @@
             type="com.udacity.shoestore.screens.shoeList.ShoeListViewModel"/>
     </data>
 
+    <!--
+        Constraint layout to easily place the button, linear layouts for their facility to
+        automatically manage dynamically added views
+    -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoelist_layout"
         android:layout_width="match_parent"

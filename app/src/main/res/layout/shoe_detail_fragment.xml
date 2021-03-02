@@ -9,6 +9,13 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
             type="com.udacity.shoestore.screens.shoeDetail.ShoeDetailViewModel"/>
     </data>
 
+    <!-->
+        Using a Constraint Layout to position the form elements centered in the phone screen while
+        having the buttons at the same height as other screens at the bottom, and allowing using
+        different screen sizes and getting the same result. A Relative layout might have also worked
+        but is deprecated.
+    -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/shoe_detail_layout"
         android:layout_width="match_parent"

@@ -10,53 +10,62 @@
             type="com.udacity.shoestore.screens.welcome.WelcomeViewModel"/>
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--
+        Linear layouts are faster so since this was doable in a linear layout it was better to use
+        it
+    -->
+
+    <LinearLayout
         android:id="@+id/welcome_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/hi_text"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
             android:text="@string/hi"
             android:textSize="18sp"
-            app:layout_constraintBottom_toTopOf="@+id/welcome_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.48000002"
-            app:layout_constraintVertical_chainStyle="packed" />
+            app:layout_constraintBottom_toTopOf="@+id/welcome_text" />
 
         <TextView
             android:id="@+id/welcome_text"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:layout_weight="1"
             android:text="@string/welcome_text"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/next_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/hi_text" />
 
-        <Button
-            android:id="@+id/next_button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="32dp"
-            android:onClick="@{() -> welcomeViewModel.onRead()}"
-            android:text="@string/next"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:gravity="end"
+            android:orientation="vertical">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:onClick="@{() -> welcomeViewModel.onRead()}"
+                android:text="@string/next"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </LinearLayout>
+
+    </LinearLayout>
 </layout>
