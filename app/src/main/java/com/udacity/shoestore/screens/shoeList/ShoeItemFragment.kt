@@ -19,9 +19,4 @@ class ShoeItemFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.shoelist_fragment, container, false)
         return binding.root
     }
-
-    fun addShoe(shoe: Shoe) {
-
-    }
-
 }
